@@ -1,12 +1,14 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Tubo.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Obstaculo.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 75.22 )
 
 [node name="Obstaculo" type="Node2D"]
 position = Vector2( 0, 427 )
+script = ExtResource( 2 )
 
 [node name="Tubo" parent="." instance=ExtResource( 1 )]
 position = Vector2( 0, 75 )
