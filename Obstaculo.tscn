@@ -21,3 +21,6 @@ rotation = 3.14159
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSumaPunto"]
 shape = SubResource( 1 )
+[connection signal="body_entered" from="Tubo" to="." method="_on_Tubo_body_entered"]
+[connection signal="body_entered" from="Tubo2" to="." method="_on_Tubo_body_entered"]
+[connection signal="body_entered" from="AreaSumaPunto" to="." method="_on_AreaSumaPunto_body_entered"]

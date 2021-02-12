@@ -1,4 +1,5 @@
 extends RigidBody2D
+class_name Jugador
 
 export var FLAP_FORCE = -200
 
