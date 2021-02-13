@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=1]
 [ext_resource path="res://Jugador.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Suelo.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Obstaculo.tscn" type="PackedScene" id=4]
+[ext_resource path="res://GeneradorDeObstaculos.tscn" type="PackedScene" id=4]
 
 [node name="mundo" type="Node2D"]
 
@@ -11,12 +11,12 @@
 texture = ExtResource( 1 )
 centered = false
 
+[node name="GeneradorDeObstaculos" parent="." instance=ExtResource( 4 )]
+position = Vector2( 600, 0 )
+
 [node name="Suelo" parent="." instance=ExtResource( 3 )]
 position = Vector2( 0.313667, 685.908 )
 
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 115, 427 )
 gravity_scale = 0.0
-
-[node name="Obstaculo" parent="." instance=ExtResource( 4 )]
-position = Vector2( 403.045, 400.03 )
