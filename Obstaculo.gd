@@ -1,4 +1,7 @@
 extends Node2D
+
+signal puntuacion
+
 const VELOCIDAD = 200
 
 func _physics_process(delta):
@@ -15,4 +18,4 @@ func _on_Tubo_body_entered(body):
 
 func _on_AreaSumaPunto_body_entered(body):
 	if body is Jugador:
-		print("Suma puntos")
+		emit_signal("puntuacion")

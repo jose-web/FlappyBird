@@ -1,11 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/textures/background.png" type="Texture" id=1]
 [ext_resource path="res://Jugador.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Suelo.tscn" type="PackedScene" id=3]
 [ext_resource path="res://GeneradorDeObstaculos.tscn" type="PackedScene" id=4]
+[ext_resource path="res://mundo.gd" type="Script" id=5]
+[ext_resource path="res://Puntuacion.tscn" type="PackedScene" id=6]
 
 [node name="mundo" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Puntuacion" parent="." instance=ExtResource( 6 )]
 
 [node name="fondo" type="Sprite" parent="."]
 texture = ExtResource( 1 )

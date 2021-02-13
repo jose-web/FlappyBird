@@ -1,5 +1,7 @@
 extends Node2D
 
+signal obstaculoCreado(obs)
+
 onready var timer = $Timer
 
 var Obstaculo = preload("res://Obstaculo.tscn")
@@ -15,9 +17,4 @@ func generarObstaculo():
 	add_child(obstaculo)
 	# numero aleatorio entre 150 y 549
 	obstaculo.position.y = randi()%400 + 150
-	
-func empezar():
-	timer.start()
-
-func parar():
-	timer.stop()
+	emit_signal("obstaculoCreado", obstaculo)
