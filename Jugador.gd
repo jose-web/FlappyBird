@@ -1,6 +1,8 @@
 extends RigidBody2D
 class_name Jugador
 
+signal morir
+
 export var FLAP_FORCE = -200
 
 const MAX_ROTATION_DEGREES = -30
@@ -8,9 +10,10 @@ const MAX_ROTATION_DEGREES = -30
 onready var animator = $AnimationPlayer
 
 var started = false
+var vivo = true
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up") && vivo:
 		if !started:
 			start()
 		flap()
@@ -30,3 +33,9 @@ func start():
 func flap():
 	linear_velocity.y = FLAP_FORCE
 	angular_velocity = -8
+
+func morir():
+	if !vivo: return
+	vivo = false
+	animator.stop()
+	emit_signal("morir")

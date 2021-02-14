@@ -25,3 +25,7 @@ position = Vector2( 0.313667, 685.908 )
 [node name="Jugador" parent="." instance=ExtResource( 2 )]
 position = Vector2( 115, 427 )
 gravity_scale = 0.0
+[connection signal="body_entered" from="Suelo/Area2D" to="." method="_on_Suelo_body_entered"]
+[connection signal="morir" from="Jugador" to="." method="_on_Jugador_morir"]
+
+[editable path="Suelo"]

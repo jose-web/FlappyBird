@@ -13,7 +13,7 @@ func _physics_process(delta):
 
 func _on_Tubo_body_entered(body):
 	if body is Jugador:
-		print("choca con el tubo")
+		body.morir()
 
 
 func _on_AreaSumaPunto_body_entered(body):
