@@ -7,6 +7,11 @@ var puntuacion = 0 setget set_puntuacion
 
 func _ready():
 	GeneradorDeObstaculos.connect("obstaculoCreado",self,"cuandoObstaculoCreado")
+	nuevoJuego()
+
+func nuevoJuego():
+	self.puntuacion = 0
+	GeneradorDeObstaculos.empezar()
 
 func puntuacionJugador():
 	self.puntuacion +=1

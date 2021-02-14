@@ -18,3 +18,9 @@ func generarObstaculo():
 	# numero aleatorio entre 150 y 549
 	obstaculo.position.y = randi()%400 + 150
 	emit_signal("obstaculoCreado", obstaculo)
+
+func empezar():
+	timer.start()
+
+func parar():
+	timer.stop()
