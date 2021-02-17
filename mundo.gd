@@ -8,7 +8,6 @@ var puntuacion = 0 setget set_puntuacion
 
 func _ready():
 	GeneradorDeObstaculos.connect("obstaculoCreado",self,"cuandoObstaculoCreado")
-	nuevoJuego()
 
 func nuevoJuego():
 	self.puntuacion = 0
@@ -24,7 +23,6 @@ func set_puntuacion(nuevaPuntuacion):
 func cuandoObstaculoCreado(obs):
 	obs.connect("puntuacion",self,"puntuacionJugador")
 
-
 func _on_Suelo_body_entered(body):
 	if body is Jugador:
 		body.morir()
@@ -36,3 +34,6 @@ func finalDelJuego():
 	GeneradorDeObstaculos.parar()
 	Suelo.get_node("AnimationPlayer").stop()
 	get_tree().call_group("obstaculos","set_physics_process",false)
+
+func _on_CanvasLayer_empezar():
+	nuevoJuego()
