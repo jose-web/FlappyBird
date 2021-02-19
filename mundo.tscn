@@ -27,9 +27,9 @@ position = Vector2( 0.313667, 685.908 )
 position = Vector2( 115, 427 )
 gravity_scale = 0.0
 
-[node name="CanvasLayer" parent="." instance=ExtResource( 7 )]
+[node name="areaDeInformacion" parent="." instance=ExtResource( 7 )]
 [connection signal="body_entered" from="Suelo/Area2D" to="." method="_on_Suelo_body_entered"]
 [connection signal="morir" from="Jugador" to="." method="_on_Jugador_morir"]
-[connection signal="empezar" from="CanvasLayer" to="." method="_on_CanvasLayer_empezar"]
+[connection signal="empezar" from="areaDeInformacion" to="." method="_on_CanvasLayer_empezar"]
 
 [editable path="Suelo"]

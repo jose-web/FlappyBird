@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/textures/message.png" type="Texture" id=1]
 [ext_resource path="res://areaDeInformacion.gd" type="Script" id=2]
+[ext_resource path="res://Puntuacion.tres" type="DynamicFont" id=3]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="areaDeInformacion" type="CanvasLayer"]
 script = ExtResource( 2 )
 
 [node name="MensajeDeInicio" type="Control" parent="."]
@@ -27,4 +28,62 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MensajeFin" type="Control" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Puntos" type="Label" parent="MensajeFin"]
+anchor_top = 0.321592
+anchor_right = 1.0
+anchor_bottom = 0.379592
+margin_top = 0.286163
+margin_bottom = -0.245819
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/line_spacing = 3
+custom_constants/shadow_offset_y = 3
+custom_constants/shadow_as_outline = 1
+text = "PUNTOS: 0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="MejorMarca" type="Label" parent="MensajeFin"]
+anchor_top = 0.424759
+anchor_right = 1.0
+anchor_bottom = 0.424759
+margin_top = -24.5
+margin_bottom = 24.5
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/line_spacing = 3
+custom_constants/shadow_offset_y = 3
+custom_constants/shadow_as_outline = 1
+text = "MEJOR MARCA: 0"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="BotonReiniciar" type="Button" parent="MensajeFin"]
+margin_left = 102.0
+margin_top = 438.86
+margin_right = 370.0
+margin_bottom = 528.86
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_pressed = Color( 0, 0, 0, 1 )
+text = "REINICIAR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Tween" type="Tween" parent="."]
+[connection signal="pressed" from="MensajeFin/BotonReiniciar" to="." method="_on_BotonReiniciar_pressed"]

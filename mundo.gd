@@ -3,6 +3,7 @@ extends Node2D
 onready var Puntuacion = $Puntuacion
 onready var GeneradorDeObstaculos = $GeneradorDeObstaculos
 onready var Suelo = $Suelo
+onready var areaDeInformacion = $areaDeInformacion
 
 var puntuacion = 0 setget set_puntuacion
 
@@ -34,6 +35,7 @@ func finalDelJuego():
 	GeneradorDeObstaculos.parar()
 	Suelo.get_node("AnimationPlayer").stop()
 	get_tree().call_group("obstaculos","set_physics_process",false)
-
+	areaDeInformacion.setPuntos(puntuacion)
+	
 func _on_CanvasLayer_empezar():
 	nuevoJuego()
