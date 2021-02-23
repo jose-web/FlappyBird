@@ -2,6 +2,8 @@ extends Node2D
 
 signal puntuacion
 
+onready var punto = $point
+
 const VELOCIDAD = 200
 
 func _physics_process(delta):
@@ -18,4 +20,5 @@ func _on_Tubo_body_entered(body):
 
 func _on_AreaSumaPunto_body_entered(body):
 	if body is Jugador:
+		punto.play()
 		emit_signal("puntuacion")

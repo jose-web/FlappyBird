@@ -8,6 +8,8 @@ export var FLAP_FORCE = -200
 const MAX_ROTATION_DEGREES = -30
 
 onready var animator = $AnimationPlayer
+onready var golpeo = $hit
+onready var volar = $wing
 
 var started = false
 var vivo = true
@@ -33,9 +35,11 @@ func start():
 func flap():
 	linear_velocity.y = FLAP_FORCE
 	angular_velocity = -8
+	volar.play()
 
 func morir():
 	if !vivo: return
 	vivo = false
 	animator.stop()
+	golpeo.play()
 	emit_signal("morir")

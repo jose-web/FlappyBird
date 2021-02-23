@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/textures/bird.png" type="Texture" id=1]
 [ext_resource path="res://Jugador.gd" type="Script" id=2]
+[ext_resource path="res://assets/audio/wing.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/audio/hit.wav" type="AudioStream" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 17.4573
@@ -80,3 +82,9 @@ shape = SubResource( 1 )
 autoplay = "Volar"
 anims/Alas = SubResource( 2 )
 anims/Volar = SubResource( 3 )
+
+[node name="wing" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
