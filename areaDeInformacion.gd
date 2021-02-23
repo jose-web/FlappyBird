@@ -4,8 +4,8 @@ signal empezar
 
 onready var mensaje = $MensajeDeInicio/Instrucciones
 onready var tween = $Tween
-onready var puntos = $MensajeFin/Puntos
-onready var mejorMarca = $MensajeFin/MejorMarca
+onready var puntosLabel = $MensajeFin/Puntos
+onready var mejorMarcaLabel = $MensajeFin/MejorMarca
 onready var mensajeFin = $MensajeFin
 
 var juegoEmpezado = false
@@ -17,8 +17,9 @@ func _input(event):
 		tween.start()
 		juegoEmpezado = true
 
-func setPuntos(nuevosPuntos):
-	puntos.text = "PUNTOS: " + str(nuevosPuntos)
+func setPuntos(nuevosPuntos, mejorMarca):
+	puntosLabel.text = "PUNTOS: " + str(nuevosPuntos)
+	mejorMarcaLabel.text = "MEJOR MARCA: " + str(mejorMarca)
 	mensajeFin.visible = true
 
 func _on_BotonReiniciar_pressed():
