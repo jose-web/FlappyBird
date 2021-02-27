@@ -36,6 +36,7 @@ func _on_Jugador_morir():
 	finalDelJuego()
 
 func finalDelJuego():
+	print("fin")
 	GeneradorDeObstaculos.parar()
 	Suelo.get_node("AnimationPlayer").stop()
 	get_tree().call_group("obstaculos","set_physics_process",false)

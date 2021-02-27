@@ -4,7 +4,7 @@ signal obstaculoCreado(obs)
 
 onready var timer = $Timer
 
-var Obstaculo = preload("res://Obstaculo.tscn")
+var Obstaculo = preload("res://Obstaculo/Obstaculo.tscn")
 
 func _ready():
 	randomize()
@@ -20,7 +20,9 @@ func generarObstaculo():
 	emit_signal("obstaculoCreado", obstaculo)
 
 func empezar():
+	print("empieza")
 	timer.start()
 
 func parar():
+	print("hola")
 	timer.stop()

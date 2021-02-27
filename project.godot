@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "RigidBody2D",
 "class": "Jugador",
 "language": "GDScript",
-"path": "res://Jugador.gd"
+"path": "res://Jugador/Jugador.gd"
 } ]
 _global_script_class_icons={
 "Jugador": ""
@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="FlappyBird"
-run/main_scene="res://mundo.tscn"
+run/main_scene="res://Mundo/mundo.tscn"
 config/icon="res://icon.png"
 
 [display]

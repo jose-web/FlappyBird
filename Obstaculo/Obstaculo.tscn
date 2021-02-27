@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Tubo.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Obstaculo.gd" type="Script" id=2]
+[ext_resource path="res://Obstaculo/Obstaculo.gd" type="Script" id=1]
+[ext_resource path="res://Obstaculo/Tubo.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/audio/point.wav" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -11,12 +11,12 @@ extents = Vector2( 10, 75.22 )
 "obstaculos",
 ]]
 position = Vector2( 0, 427 )
-script = ExtResource( 2 )
+script = ExtResource( 1 )
 
-[node name="Tubo" parent="." instance=ExtResource( 1 )]
+[node name="Tubo" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, 75 )
 
-[node name="Tubo2" parent="." instance=ExtResource( 1 )]
+[node name="Tubo2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 0, -75 )
 rotation = 3.14159
 

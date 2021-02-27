@@ -1,7 +1,8 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://Puntuacion.tres" type="DynamicFont" id=1]
-[ext_resource path="res://Puntuacion.gd" type="Script" id=2]
+[ext_resource path="res://Puntuacion/Puntuacion.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Puntuacion/Puntuacion.gd" type="Script" id=2]
+
 
 [node name="Puntuacion" type="CanvasLayer"]
 script = ExtResource( 2 )
